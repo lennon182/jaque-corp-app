@@ -1,0 +1,29 @@
+<div class="row table-header">
+  <div class="col s6 left-align">CAR MARKS</div>
+  <div class="col s6 right-align">TOTALS</div>
+</div>
+<div
+  class="row"
+  *ngFor="let data of dataList | pagination: size_per_page:pag_number"
+>
+  <div class="col s6 left-align">
+    {{ data.name }}
+  </div>
+  <div class="col s6 right-align">
+    {{ data.total | currency }}
+  </div>
+</div>
+<!-- PAGINATOR -->
+<div class="row m-top">
+  <div class="col s12">
+    <mat-paginator
+      [length]="this.dataList.length"
+      [pageSize]="size_per_page"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="paginator($event)"
+      showFirstLastButtons
+      class="custom-paginator"
+    >
+    </mat-paginator>
+  </div>
+</div>

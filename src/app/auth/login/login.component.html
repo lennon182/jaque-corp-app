@@ -1,0 +1,116 @@
+<div class="loader" *ngIf="isLoad">
+  <h1>Loading...</h1>
+</div>
+<!--  -->
+<div class="container_ center card-login">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Welcome</mat-card-title>
+      <mat-card-subtitle>Please login</mat-card-subtitle>
+      <span class="example-spacer"></span>
+      <!--  -->
+      <button
+        mat-icon-button
+        (click)="toUsers()"
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with code icon"
+      >
+        <ion-icon size="large" name="people"></ion-icon>
+        <!-- <mat-icon fontSet="ion-icon" fontIcon="logo-github"></mat-icon> -->
+      </button>
+      <button
+        mat-icon-button
+        (click)="toCars()"
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with code icon"
+      >
+        <ion-icon size="large" name="car-sport"></ion-icon>
+        <!-- <mat-icon fontSet="ion-icon" fontIcon="logo-github"></mat-icon> -->
+      </button>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col s12 m6 center-align m-top">
+          <img
+            mat-card-image
+            src="https://jaque.me/assets/images/q_jaque.svg"
+            alt="Photo of a Shiba Inu"
+            class="login-img"
+          />
+        </div>
+        <div class="col s12 m6 center-align">
+          <!-- Form -->
+          <form class="example-form">
+            <!-- EMAIL -->
+            <mat-form-field
+              appearance="fill"
+              class="example-full-width m-bottom"
+            >
+              <mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                [formControl]="emailFormControl"
+                placeholder="Ex. pat@example.com"
+              />
+              <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+              <ion-icon matSuffix size="large" name="mail-outline"></ion-icon>
+              <mat-error
+                *ngIf="
+                  emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <!-- EMAIL -->
+            <!-- PASSWORD -->
+            <mat-form-field appearance="fill" class="example-full-width m-top">
+              <mat-label>Enter your password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                [formControl]="passwordFormControl"
+                placeholder="********"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <!-- PASSWORD -->
+            <button
+              mat-raised-button
+              color="primary"
+              class="login-btn"
+              (click)="login()"
+            >
+              Login
+            </button>
+          </form>
+          <!-- Form -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 left-align"></div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions> </mat-card-actions>
+  </mat-card>
+</div>

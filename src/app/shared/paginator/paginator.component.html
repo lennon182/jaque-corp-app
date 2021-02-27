@@ -1,0 +1,13 @@
+<div class="row m-top">
+  <div class="col s12">
+    <mat-paginator
+      [length]="this.data.length"
+      [pageSize]="size_per_page"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="paginator($event)"
+      showFirstLastButtons
+      class="custom-paginator"
+    >
+    </mat-paginator>
+  </div>
+</div>

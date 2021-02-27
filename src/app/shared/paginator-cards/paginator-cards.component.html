@@ -1,0 +1,49 @@
+<div class="row m-top">
+  <div class="col s12">
+    <mat-paginator
+      [length]="dataCard.length"
+      [pageSize]="size_per_page"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="paginator($event)"
+      showFirstLastButtons
+      class="custom-paginator"
+    >
+    </mat-paginator>
+  </div>
+</div>
+
+<div class="row">
+  <div
+    class="col s12 center"
+    *ngFor="let data of this.dataCard | pagination: size_per_page:pag_number"
+  >
+    <mat-card class="example-card m-vertical z-depth-5">
+      <mat-card-header class="card-header v-align">
+        <div mat-card-avatar [style]="data.image | tob64" class="v-align"></div>
+        <mat-card-title class="v-align">
+          <span class="v-align">
+            {{ data.first_name }} {{ data.last_name }}
+          </span>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="left-align m-vertical p-horizontal">
+        <div class="row">
+          <div class="col s6 left-align">
+            <p>Email: {{ data.email }}</p>
+          </div>
+          <div class="col s6 right-align">
+            <p>Gender: {{ data.gender }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 right-align">
+            <p>
+              <span class="m-right" [matBadge]="data.id" matBadgeSize="medium">
+              </span>
+            </p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

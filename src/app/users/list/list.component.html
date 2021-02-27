@@ -1,0 +1,10 @@
+<div class="loader" *ngIf="isLoad">
+  <h1>Loading...</h1>
+</div>
+<!--  -->
+<!-- TODO: Crear un solo Componente para el paginator -->
+<app-paginator-cards
+  [dataCard]="this.users"
+  *ngIf="!isLoad"
+></app-paginator-cards>
+<!--  -->

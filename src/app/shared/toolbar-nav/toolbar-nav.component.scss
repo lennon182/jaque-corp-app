@@ -1,0 +1,32 @@
+.top-toolbar {
+  background-color: var(--jaque-dark);
+  height: 3rem;
+}
+.main-toolbar {
+  background-color: var(--jaque-primary);
+  height: 3rem;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+// .example-spacer {
+//   flex: 1 1 auto;
+// }

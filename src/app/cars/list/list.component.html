@@ -1,0 +1,55 @@
+<div class="loader" *ngIf="isLoad">
+  <h1>Loading...</h1>
+</div>
+<!--  -->
+<div *ngIf="!isLoad">
+  <div class="row m-top">
+    <div class="col s12">
+      <h2>{{ this.carsData.length }} Car Makes</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="chart">
+        <ngx-charts-line-chart
+          [scheme]="colorScheme"
+          [autoScale]="autoScale"
+          [legend]="legend"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [results]="carsData"
+          [timeline]="timeline"
+          [legendTitle]="legendTitle"
+        >
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <app-paginator-list
+    [dataList]="carsData"
+    *ngIf="!isLoad"
+  ></app-paginator-list>
+  <!--  -->
+  <div class="row m-top">
+    <div class="col s12 m-top">
+      <h3 class="m-top">NGX-CHARTS</h3>
+      <pre class="m-top">
+        <code>
+          <a href="https://swimlane.github.io/ngx-charts/#/ngx-charts/line-chart" target="_blank">
+            https://swimlane.github.io/ngx-charts/#/ngx-charts/line-chart
+          </a>
+        </code>
+      </pre>
+      <h3>Data Schema for Chart</h3>
+      <pre>
+        <code [innerHTML]="code"></code>
+      </pre>
+    </div>
+  </div>
+</div>

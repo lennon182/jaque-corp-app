@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --jaque-primary: #131b30;
+  --jaque-dark: #212121;
+  --jaque-light: #f0f0f0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// === [ CUSTOMS ] ===
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-paginator {
+  background-color: var(--jaque-light);
+  color: #212121;
+
+  border-radius: 0.5rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://static.wixstatic.com/media/cfd56a_3c06323b42104ef2ba74a1877b018542~mv2.gif);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--jaque-primary);
+}
+
+.v-align {
+  vertical-align: middle !important;
+}
+// MARGIN
+.m-top {
+  margin-top: 1rem;
+}
+.m-bottom {
+  margin-bottom: 1rem;
+}
+.m-left {
+  margin-left: 1rem;
+}
+.m-right {
+  margin-right: 1rem;
+}
+.m-vertical {
+  margin: 1rem 0 1rem 0 !important;
+}
+.m-horizontal {
+  margin: 0 1rem 0 1rem;
+}
+// PADDING
+.p-top {
+  padding-top: 1rem;
+}
+.p-bottom {
+  padding-bottom: 1rem;
+}
+.p-left {
+  padding-left: 1rem;
+}
+.p-right {
+  padding-right: 1rem;
+}
+.p-vertical {
+  padding: 1rem 0 1rem 0;
+}
+
+.p-horizontal {
+  padding: 0 1rem 0 1rem;
+}
+//
+.logo-jaque {
+  max-width: 90%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
