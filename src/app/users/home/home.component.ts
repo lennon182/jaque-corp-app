@@ -10,14 +10,4 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
-  async toUsers() {
-    await this.router.navigateByUrl('/users');
-  }
-  async toCars() {
-    await this.router.navigateByUrl('/cars');
-  }
-  async toLogin() {
-    await this.router.navigateByUrl('/auth');
-  }
 }

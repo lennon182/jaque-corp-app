@@ -1,5 +1,23 @@
 # 🔥 JaqueCorp
 
+### ⚙️ In production
+
+    https://jaquecorp-wep-app-2uut5npgiq-uc.a.run.app/auth
+
+### 🔐 user/password for demo
+
+    user: admin@jaquecorp.com
+    password: J@kSw0rd
+
+### 👮🏾‍♂️ Auth Server
+
+    https://autserver-sjewk6y5wq-uc.a.run.app/
+
+### 🐳 Apps in Docker Containers
+
+    - WebApp in Docker Container Host on GoogleCloud
+    - AuthServer in Docker Container Host on GoogleCloud
+
 ## 🔥 Tech's:
 
 <br>
@@ -31,6 +49,11 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"},
+
+    - AuthServer:
+        NodeJS
+        TypeScript
+        JWT
 
 <br>
 

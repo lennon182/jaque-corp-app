@@ -13,13 +13,6 @@ export class ListComponent implements OnInit {
   isLoad: boolean = true;
   subscriptors: Subscription = new Subscription();
   cars: ICar[] = [];
-  marks: any[] = [];
-  marksNotDuplicated: any[] = [];
-  salesByMark: any[] = [];
-
-  size_per_page: number = 10;
-  pag_number: number = 1;
-  pageSizeOptions: number[] = [5, 10];
   //
   // TODO: Pasar las opciones a un archivo separado
   // ChartOptions
@@ -147,12 +140,12 @@ export class ListComponent implements OnInit {
   `;
   constructor(private carsSVC: CarsService) {}
 
-  // Inits
+  // === [Inits] ===
   ngOnInit(): void {
     this.getCars();
   }
-  // GetCars From Service
-  getCars() {
+  // === [ GetCars From Service ] ===
+  getCars(): void {
     this.subscriptors.add(
       this.carsSVC.getCars().subscribe((carsData) => {
         this.carsData = carsData;
@@ -160,12 +153,7 @@ export class ListComponent implements OnInit {
       })
     );
   }
-  paginator(e: PageEvent) {
-    this.size_per_page = e.pageSize;
-    this.pag_number = e.pageIndex + 1;
-  }
-
-  //Unsubscribes
+  // === [ Unsubscribe ] ===
   ngOnDestroy(): void {
     this.subscriptors.unsubscribe();
   }

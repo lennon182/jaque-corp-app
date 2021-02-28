@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
-const authRoutes: Routes = [
+const dashRoutes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: HomeComponent,
     children: [
       {
         path: 'login',
-        component: LoginComponent,
+        component: HomeComponent,
       },
       {
         path: '**',
-        component: LoginComponent,
+        component: HomeComponent,
       },
     ],
   },
@@ -22,7 +22,7 @@ const authRoutes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forChild(authRoutes)],
+  imports: [CommonModule, RouterModule.forChild(dashRoutes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule {}
+export class DashRoutingModule {}

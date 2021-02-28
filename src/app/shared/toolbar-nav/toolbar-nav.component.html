@@ -36,6 +36,10 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="example-spacer"></span>
+    <button mat-button color="basic" (click)="toDashboard()">
+      <ion-icon size="small" name="apps"></ion-icon>
+      Dashboard
+    </button>
     <button mat-button color="basic" (click)="toUsers()">
       <ion-icon size="small" name="people"></ion-icon>
       Users
@@ -49,8 +53,8 @@
     </button>
     <mat-menu #profileMenu="matMenu">
       <button mat-menu-item>My Profile</button>
-      <button mat-menu-item (click)="toLogin()">Login</button>
-      <button mat-menu-item>Logout</button>
+      <!-- <button mat-menu-item (click)="toLogin()">Login</button> -->
+      <button mat-menu-item (click)="logOut()">Logout</button>
     </mat-menu>
     <!--  -->
   </mat-toolbar-row>
